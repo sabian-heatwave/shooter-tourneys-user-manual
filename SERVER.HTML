@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="css/readme.css" />
+    <title>Servers With Shooter Tourneys</title>
+</head>
+<body>
+    <img style="filter: invert(1)" src="img\logo.png" class="center" />
+    <h1>Shooter Tourneys:</h1>
+    <h1>Server Guide</h1>
+    <h2>Static IP Address</h2>
+    <p>
+        Before we begin, we need to set a static IP address to our computer. You need to download a program called Port Forward Network Utilities[portforward.com] to continue. Once it is installed, select the Static IP Address option in the menu. Select your network device in the drop-down menu and press the Make it Static button.
+        The reason why we are doing this is because if your IP address is still dynamic, it will keep changing every time you restart your PC and it needs to be the same.
+    </p>
+    <h2>Port Forwarding</h2>
+    <h3>Finding the Default Gateway</h3>
+    <p>Before you get to the server part, you need to forward some ports on your router so that <i>Half-Life Dedicated Server</i> (the tool we're using) can use them, and clients from other networks can access those ports.</p>
+    <p>Open your start menu and type cmd and open the Command Prompt. Elevation is not required. In the command prompt, type the command ipconfig. A list of configurations for the network devices you have will appear. Find the one you're using, and get the address for your Default Gateway. Type that address in the URL bar of your browser. <b>NOTE: make sure you keep CMD open!! We will need it later.</b> You should have a prompt appear to type a username and password. Most routers have the username and password <b>admin</b>, but some people, like me, have the username <b>admin</b> and a password. You can go to your router and there should be a sticker showing the default gateway password (it isn't the one you use to connect to your router). If you can't find it, you should look around the house for any other things that came with the router, or contact your ISP.</p>
+    <h3>Port Forwarding</h3>
+    <p>Now, we can port forward! Find the page for port forwarding on your router settings. If you can't find it, your ISP should show you how on their website.</p>
+    <p>Using this page we can add "rules" to your router. Create one, [name it whatever you want] and enter the IP for your PC. In ALL the boxes where you can enter a port, type <b>27015</b> and select the TCP protocol and save the rule. Repeat the exact same step, but this time, use the UDP protocol. <b>NOTE: you cannot use the "UDP/TCP" protocol.</b> Repeat the same step again, but this time, type the port <b>27020</b>. Make sure you keep the UDP protocol. Repeat the step again, but with the port <b>26900</b>.</p>
+    <p>Now, you should be port forwarded!</p>
+    <h2>Downloading <i>Half-Life Dedicated Server (HLDS)</i></h2>
+    <h3>SteamCMD</h3>
+    <p>You'd think you could just go into Steam Tools and download the tool from there, but for unknown reasons, that version of the tool is broken. You need to download SteamCMD to get the fixed version of the tool. Extract the ZIP to any folder you want [if you have multiple drives, save it to the one with the most space, 3 GB+ is recommended]. Now, you can open SteamCMD and wait for it to download all the files it needs.</p>
+    <h3><i>HLDS</i></h3>
+    <p>Once SteamCMD has finished downloading, you can sign in to your Steam account, though if you don't want to, you can try using the anonymous account.</p>
+    <p>Your account:</p>
+    <code>login USERNAME</code>
+    <p>Anonymous:</p>
+    <code>login anonymous</code>
+    <p>Once you're logged in, you can install Half-Life Dedicated Server (we will refer to it as HLDS from now on). In SteamCMD, type <b>app_update 90 validate</b> and it will begin downloading, then it will validate all the files. The download will suddenly stop, so type the command again until there are no more updates. Once it is finished, go to your SteamCMD folder, then steamapps, common, Half-Life.</p>
+    <h2>Transferring <i>Shooter Tourneys</i> to <i>HLDS</i></h2>
+    <p>Right click <i>Shooter Tourneys</i> in your Steam library. Go to PROPERTIES > LOCAL FILES > BROWSE LOCAL FILES. Copy the zamnhlmp folder and paste it in your HLDS folder.</p>
+    <h2>Setting up <i>HLDS</i></h2>
+    <p>Create a batch file in your HLDS folder. The batch file tells HLDS what settings to use. Name the batch file with the name of the game/mod of which you want to host a server for. You can create more batch files for different mods/games.</p>
+    <p>Format:</p>
+    <code>hlds.exe -console -game zamnhlmp +maxplayers 2-32 +map map -ip your ip +port 27015</code>
+    <p>Example:</p>
+    <code>hlds.exe -console -game zamnhlmp +maxplayers 32 +map zamnhlmp_here -ip 192.168.1.1 +port 27015</code>
+    <h2>Tracking Your Progress</h2>
+    <p>HLDS should be able to work at this point, though with only basic functions. Before we go any further, start your batch file for <i>Shooter Tourneys</i> and make sure you have your IP on your clipboard. Open <i>Shooter Tourneys,</i> open the console, and type connect [your IP] and you should be able to join. If it says STEAM validation rejected, close the server and run the batch file again.</p>
+    <h2>Configuring HLDS</h2>
+    <p>In your HLDS directory, go to the zamnhlmp folder, and open server.cfg with Notepad. The default looks like this:</p>
+    <pre>
+// == Server Configuration ==
+// This runs everytime the server changes level.
+// Don't use this for banning weapons, setting timelimits, etc. See the gamemode configurations in the gamemodes folder and the User Manual in the Manual folder for info.
+// For startup settings, see startup_server.cfg
+// COMMAND				VALUE						FUNCTION/COMMENT
+rcon_password			"" 							//Rcon (remote control) password. Players set the command value to the password in their clients and they'll have access to control the server.
+hostname				"Shooter Tourneys 1.0"		//Server name
+sv_password				""							//Password for players. Leave two quotation marks ("") there for no password.
+sv_contact				"example@example.com"		//Replace this with your own email.
+sv_wateramp				0							//Set the wave height to 0, or else maps that don't set it will go wild
+pausable				0							//A pretty important CVar, since it makes your server unpausable by clients. Don't change this to 1 unless you like screwed up games.
+port					"27015"						//Don't change this either. 27015 is the main port for dedicated and listen servers.
+sv_allow_download		1							//Allows for clients to download from the server.
+sv_allow_upload			1							//Allows for server to transfer files to FTP server for FastDL or to go straight to clients.
+    </pre>
+    <p>What you can change in this file should be self-explanatory since everything is commented.</p>
+    <h2>(Optional) AMX MOD X</h2>
+    <p>AMX MOD X is the plugin base for all servers that run on HLDS. I will not show you how to install and make your own plugins.</p>
+    <p>For AMX MOD X to work, you need to get the custom version of Metamod from <a href="https://github.com/thephoenixprojectsoftware/metamod/releases">here.</a> Move the addons folder to your zamnhlmp folder in HLDS, NOT HALF-LIFE.</p>
+    <p>For this version of Metamod to work, you need to get ReHLDS from <a href="https://github.com/dreamstalker/rehlds/releases">here.</a> Extract the ZIP to your HLDS folder.</p>
+</body>
+</html>
+<footer>
+    <p style="font-size: 12px">This document comes with <i>Shooter Tourneys</i> v1.0. Copyright © 2020 The Phoenix Project.</p>
+</footer>
