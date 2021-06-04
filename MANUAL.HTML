@@ -12,14 +12,13 @@
     <h1>Half-Life: Zombies Ate My Neighbours Multiplayer</h1>
     <h1>User Manual</h1> <br />
     <h2>About</h2>
-    <p><i>ZAMNHLMP</i> uses the award-winning <i>Half-Life</i> Engine, also known as <i>GoldSource</i> by Valve for hectic deathmatch games. <i>Shooter Tourneys</i> is also based from the codeframe of <i><a href="https://www.moddb.com/engines/creative-deathmatch-player">the creaTive Deathmatch Player</a></i> which is a modification of <i><a href="https://openag.pro">Adrenaline Gamer</a></i> by BulliT and uses open-source technologies by YaLTeR (OpenAG) for its client to give you the best experience.</p>
+    <p><i>ZAMNHLMP</i> uses the award-winning <i>Half-Life</i> Engine, also known as <i>GoldSource</i> by Valve for hectic deathmatch games. <i>ZAMNHLMP</i> is also based from the codeframe of <i><a href="https://www.moddb.com/engines/aura">Aura</a></i> which is a modification of <i><a href="https://openag.pro">Adrenaline Gamer</a></i> by BulliT and uses open-source technologies by YaLTeR (OpenAG) for its client to give you the best experience.</p>
 
     <h2>Gamemodes</h2>
     <h3>List of Gamemodes</h3>
     <ul>
         <li>Arcade: Gives the player all weapons and suit armour. Player regains suit armour and all weapons after killing another player.</li>
         <li>Arena: Similar to Arcade, but players take turns 1v1-ing each other.</li>
-        <li>Bunny Hop Race: Players race through a "bhop" or "kz" map.</li>
         <li>Crowbar Arena: Similar to Arena, but players only have the Crowbar.</li>
         <li>Classic DM: Classic Deathmatch. 'Nuff said.</li>
         <li>Capture the Flag</li>
@@ -28,7 +27,6 @@
         <li>Instant Gib: One-Shot Kills</li>
         <li>Last Man Standing: Will you survive?</li>
         <li>Last Team Standing: Will your team survive?</li>
-        <li>Mortal God: A modified version of Gun Game. The player with the most kills within every 5 minutes is the <b>Mortal God</b> and all players but the <b>Mortal God</b> are frozen for 30 seconds. The <b>MG</b> must kill as much people as possible in the 30 seconds they have!</li>
         <li>Team Deathmatch</li>
     </ul>
     <h3>Changing Gamemodes</h3>
@@ -37,7 +35,6 @@
     <ul>
         <li>arcade</li>
         <li>arena</li>
-        <li>bhoprace</li>
         <li>cbar</li>
         <li>cbcup</li>
         <li>classic</li>
@@ -47,25 +44,16 @@
         <li>instagib</li>
         <li>lms</li>
         <li>lts</li>
-        <li>mortalgod</li>
         <li>tdm</li>
     </ul>
-    <p>To change gamemodes, use the server console and type <code>sv_creative_gamemode</code> and then the name of the gamemode CFG file.</p>
+    <p>To change gamemodes, use the server console and type <code>sv_aura_gamemode</code> and then the name of the gamemode CFG file.</p>
     <p>You can also choose to changelevel at the same time. Example:</p>
-    <code>sv_creative_gamemode classic; changelevel zamnhlmp_here</code>
+    <code>sv_aura_gamemode classic; changelevel zamnhlmp_here</code>
     <h3>Creating Gamemodes</h3>
-    <p>Creating simple gamemodes is simple. Go to the <b>gamemodes</b> folder where <i>Shooter Tourneys</i> is located, and you can make a duplicate of one of the existing gamemodes and open using Notepad or your text editor of choice <b>(Notepad++ recommended)</b>. Changing things in there should be pretty much straight forward, since everything is commented and beginner-friendly. Note that <code>sv_creative_gametype</code> is very important, because it determines what gametype your gamemode will be based from. Arena is taking turns 1v1, CTF is, well, CTF, and these apply for LMS and LTS too. If you just want a simple gamemode, you can set the gametype to <code>ffa</code>.</p>
+    <p>Creating simple gamemodes is simple. Go to the <b>gamemodes</b> folder where <i>Shooter Tourneys</i> is located, and you can make a duplicate of one of the existing gamemodes and open using Notepad or your text editor of choice <b>(Notepad++ recommended)</b>. Changing things in there should be pretty much straight forward, since everything is commented and beginner-friendly. Note that <code>sv_aura_gametype</code> is very important, because it determines what gametype your gamemode will be based from. Arena is taking turns 1v1, CTF is, well, CTF, and these apply for LMS and LTS too. If you just want a simple gamemode, you can set the gametype to <code>ffa</code>.</p>
     <p>Creating a gametype is hard to do and requires knowledge of the AG SDK. You can get <i><a href="https://github.com/thephoenixprojectsoftware/shootertourneysAG">AG SDK for Shooter Tourneys on GitHub.</a></i></p>
 
     <h2>Maps</h2>
-    <h3>Mapcodes</h3>
-    <p>Some maps start with codes, so here is the meaning.</p>
-    <ul>
-        <li><code>ag</code> Maps for Adrenaline Gamer</li>
-        <li><code>bhop</code> Bunny Hop Maps</li>
-        <li><code>kitkat</code> KitKat maps based from real-world locations.</li>
-        <li><code>zamnhlmp</code> Official <i>Shooter Tourneys</i> maps created by the developers.</li>
-    </ul>
     <h3>Map Credits</h3>
     <p style="font-family: 'Trebuchet MS'; color:darkorange"><b>MAPS WITH UNKNOWN CREATORS ARE NOT LISTED IN THE TABLE</b></p>
     <table style="width:100%">
@@ -74,127 +62,107 @@
             <th>Creator</th>
         </tr>
         <tr>
-            <td>1337_street</td>
-            <td>Kampy on GameBanana</td>
+            <td>Blimpboom</td>
+            <td>Unknown</td>
         </tr>
         <tr>
-            <td>ag_crossfire</td>
-            <td>twitch_hl on GameBanana</td>
+            <td>Boot Box</td>
+            <td>Unknown</td>
         </tr>
         <tr>
-            <td>big_city</td>
-            <td>Soup Miner on GameBanana</td>
+            <td>Boot Camp</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>ClosetRats2002</td>
-            <td>OneSneakyMouse (onesneakymouse@yahoo.com)</td>
+            <td>Bounce</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>courtyard2</td>
-            <td>Rad Brad</td>
+            <td>Cove</td>
+            <td>The Phoenix Project Software</td>
         </tr>
         <tr>
-            <td>crossfire_crazy</td>
-            <td>Buller</td>
+            <td>Crossfire</td>
+            <td>The Phoenix Project Software & Valve Software</td>
         </tr>
         <tr>
-            <td>crossfire_upgrade</td>
-            <td>Dairy</td>
+            <td>Datacore</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>dead-dust2</td>
-            <td>DEAD [DMitry K.]</td>
+            <td>Doublecross</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>dutch_dust</td>
-            <td>DutchNeo</td>
+            <td>Dyce</td>
+            <td>Unknown</td>
         </tr>
         <tr>
-            <td>hl_pyrozone</td>
-            <td>sToP !</td>
+            <td>Frenzy</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>kitkat_kasino</td>
+            <td>Gasworks</td>
+            <td>Gearbox Software</td>
+        </tr>
+        <tr>
+            <td>Guardian</td>
+            <td>The Phoenix Project Software</td>
+        </tr>
+        <tr>
+            <td>Kasino</td>
             <td>DocRock</td>
         </tr>
         <tr>
-            <td>kitkat_klub</td>
+            <td>Kasino2</td>
             <td>DocRock</td>
         </tr>
         <tr>
-            <td>kitkat_krossfire</td>
-            <td>DocRock</td>
+            <td>Lambda Bunker</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>kitkat_space</td>
-            <td>DocRock</td>
+            <td>Pyrozone</td>
+            <td>sToP ! from Pyro Zone - pyro-zone.com</td>
         </tr>
         <tr>
-            <td>kitkat_urban</td>
-            <td>DocRock</td>
+            <td>Rapidcore</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>mario_kart</td>
-            <td>DocRock</td>
+            <td>Snark Pit</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>mesabase</td>
-            <td>SGT_kick_ur_ass on GameBanana</td>
+            <td>StalkX</td>
+            <td>tommyd</td>
         </tr>
         <tr>
-            <td>simpsons_rats</td>
-            <td>DocRock</td>
+            <td>Stalkyard</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>Taccotruckrats</td>
-            <td>OneSneakyMouse (onesneakymouse@yahoo.com)</td>
+            <td>Subtransit</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>the_beach</td>
-            <td>Comrade_Shephard on GameBanana</td>
+            <td>Undertow</td>
+            <td>Valve Software</td>
         </tr>
         <tr>
-            <td>tig_qui</td>
-            <td>Safety1st</td>
-        </tr>
-        <tr>
-            <td>unerx3</td>
-            <td>VEF4 / Codebreaker</td>
-        </tr>
-        <tr>
-            <td>xdm_stalkyard</td>
-            <td>Chapo</td>
-        </tr>
-        <tr>
-            <td>zamnhlmp_arena</td>
-            <td>Sabian Roberts | barney</td>
-        </tr>
-        <tr>
-            <td>zamnhlmp_disco</td>
-            <td>Sabian Roberts | barney</td>
-        </tr>
-        <tr>
-            <td>zamnhlmp_here</td>
-            <td>Rafael Soares | RafaXIS</td>
-        </tr>
-        <tr>
-            <td>zamnhlmp_naturist</td>
-            <td>Sabian Roberts | barney & V1nkly</td>
-        </tr>
-        <tr>
-            <td>zamnhlmp_phoenixhq</td>
-            <td>Sabian Roberts | barney</td>
+            <td>Xen</td>
+            <td>Gearbox Software</td>
         </tr>
     </table>
 
     <h2>That's It!</h2>
-    <p>That's all the basic information you need to know to get started with <i>Shooter Tourneys.</i> If you have any questions, see the <a href="README.HTML">README Document just in case it is answered in there.</a> If you wish to start a server, see the <a href="SERVER.HTML">Servers With <i>Shooter Tourneys</i> document. It goes over plugins and all sorts.</a></p> 
+    <p>That's all the basic information you need to know to get started with <i>ZAMNHLMP.</i> If you have any questions, see the <a href="README.HTML">README Document just in case it is answered in there.</a> If you wish to start a server, see the <a href="SERVER.HTML">Servers With <i>Shooter Tourneys</i> document. It goes over plugins and all sorts.</a></p> 
     <p>If you believe there's anything we missed out, please let us know at our Discord server:</p>
     <iframe src="https://discordapp.com/widget?id=346623522753216532&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 </body>
 </html>
 <footer>
-    <p style="font-size: 12px">This intruction manual comes with <i>ZAMNHLMP</i> v2.0. Copyright © 2021 The Phoenix Project Software.</p>
+    <p style="font-size: 12px">This intruction manual comes with <i>ZAMNHLMP</i> v2.5. Copyright © 2021 The Phoenix Project Software.</p>
     <p style="font-size: 12px">"OpenAG" Copyright © YaLTeR.</p>
     <p style="font-size: 12px">"Adrenaline Gamer" Copyright © 2003 Martin Webbrant.</p>
     <p style="font-size: 12px">"Half-Life" Copyright © Valve. This software follows the Half Life 1 SDK LICENSE.</p>
